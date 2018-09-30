@@ -69,7 +69,12 @@ MouseArea {
           }
           return "transparent"
         }
-        border.color: check.color
+        border.color: {
+          if (checked) {
+            return check.color
+          }
+          return Qt.darker("white", 1.5)
+        }
         border.width: 1
     }
 }
